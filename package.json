@@ -1,6 +1,6 @@
 {
   "name": "@bentah/schematics",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "List of Angular Schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json"
