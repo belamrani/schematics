@@ -1,0 +1,20 @@
+{
+  "name": "@bentah/schematics",
+  "version": "0.1.0",
+  "description": "List of Angular Schematics",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^0.6.1",
+    "@angular-devkit/schematics": "^0.6.3",
+    "@types/node": "^8.0.31",
+    "typescript": "^2.7.2"
+  }
+}

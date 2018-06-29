@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+
+  "schematics": {
+    "tooling-git": {
+      "description": "Customize your angular app with husky, commitizen and prettier",
+      "factory": "./tooling-git/index#ToolingGitSchematic",
+      "schema": "./tooling-git/schema.json"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+ "{src,e2e}/**/*.ts": [
+  "tslint --fix",
+  "prettier --single-quote --no-bracket-spacing --write",
+  "git add"
+ ],
+ "*.scss": [
+   "prettier --single-quote --write",
+   "git add"
+ ]
+}

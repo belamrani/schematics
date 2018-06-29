@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "Tooling git",
+  "title": "Tooling git schematics Schema",
+  "type": "object",
+  "properties": {
+  }
+}
