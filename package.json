@@ -8,7 +8,11 @@
   "keywords": [
     "schematics"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belamrani/schematics.git"
+  },
+  "author": "benoit el amrani",
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
