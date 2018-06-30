@@ -4,8 +4,15 @@
   "schematics": {
     "tooling-git": {
       "description": "Customize your angular app with husky, commitizen and prettier",
-      "factory": "./tooling-git/index#ToolingGitSchematic",
-      "schema": "./tooling-git/schema.json"
+      "factory": "./tooling-git/index#ToolingGitSchematic"
+    },
+    "lite-server": {
+      "description": "Set up lite-server in your angular app",
+      "factory": "./lite-server/index#LiteServerSchematic"
+    },
+    "webpack-analyser-bundle": {
+      "description": "Set up webpack-analyser-bundle in your angular app",
+      "factory": "./webpack-analyser-bundle/index#WebpackAnalyserBundleSchematic"
     }
   }
 }

@@ -3,6 +3,7 @@ import {
     url
 } from '@angular-devkit/schematics';
 import {NodePackageInstallTask} from "@angular-devkit/schematics/tasks";
+import {addPackageToPackageJson} from "../utils/utils";
 
 export function ToolingGitSchematic(): Rule {
     const copyConfigFiles = apply(url('./files'), [
@@ -24,11 +25,11 @@ export function ToolingGitSchematic(): Rule {
 /** Add needed lib to package.json if not already present. */
 function addLibsToPackageJson() {
     return (host: Tree, context: SchematicContext) => {
-        addPackageToPackageJson(host, 'dependencies', 'commitizen', '2.10.1');
-        addPackageToPackageJson(host, 'dependencies', 'cz-customizable', '5.2.0');
-        addPackageToPackageJson(host, 'dependencies', 'husky', '0.14.3');
-        addPackageToPackageJson(host, 'dependencies', 'lint-staged', '7.2.0');
-        addPackageToPackageJson(host, 'dependencies', 'prettier', '1.13.7');
+        addPackageToPackageJson(host, 'devDependencies', 'commitizen', '^2.10.1');
+        addPackageToPackageJson(host, 'devDependencies', 'cz-customizable', '^5.2.0');
+        addPackageToPackageJson(host, 'devDependencies', 'husky', '^0.14.3');
+        addPackageToPackageJson(host, 'devDependencies', 'lint-staged', '^7.2.0');
+        addPackageToPackageJson(host, 'devDependencies', 'prettier', '^1.13.7');
         context.addTask(new NodePackageInstallTask());
         return host;
     };
@@ -63,23 +64,3 @@ const addPackageJsonConfig = (): Rule => {
         return host;
     };
 };
-
-
-/**
- * Adds a package to the package.json
- */
-function addPackageToPackageJson(
-    host: Tree, type: string, pkg: string, version: string): Tree {
-    if (host.exists('package.json')) {
-        const sourceText = host.read('package.json')!.toString('utf-8');
-        const json = JSON.parse(sourceText);
-        if (!json[type]) {
-            json[type] = {};
-        }
-        if (!json[type][pkg]) {
-            json[type][pkg] = version;
-        }
-        host.overwrite('package.json', JSON.stringify(json, null, 2));
-    }
-    return host;
-}
